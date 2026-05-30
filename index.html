@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R58TKKD5MZ"></script>
 <script>
@@ -152,6 +151,26 @@
         background-color: #003d99;
     }
 
+    .mail-btn {
+        display: block;
+        margin-top: 12px;
+        background-color: #ffffff;
+        color: #0052cc;
+        padding: 16px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        border: 2px solid #0052cc;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 1.5;
+        transition: all 0.2s;
+        box-sizing: border-box;
+    }
+
+    .mail-btn:hover {
+        background-color: #f3f8ff;
+    }
+
     .btn-sub-text {
         display: block;
         font-size: 12px;
@@ -175,13 +194,11 @@
     }
 </style>
 
-
 </head>
 
 <body>
 
 <div class="parking-card">
-
 
 <div class="parking-icon">P</div>
 
@@ -230,6 +247,17 @@
     </span>
 </a>
 
+<a href="mailto:joushin@minimini.jp?subject=月極駐車場について"
+   class="mail-btn"
+   onclick="gtag('event','email_click',{
+       'event_category':'contact',
+       'event_label':'joshin_mail'
+   });">
+    メールによるご相談はこちら
+    <span class="btn-sub-text">
+        joushin@minimini.jp
+    </span>
+</a>
 
 </div>
 
