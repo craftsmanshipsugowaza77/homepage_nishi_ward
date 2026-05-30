@@ -1,163 +1,237 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>月極駐車場のご案内</title>
-    <style>
-        /* 全体のスタイル設定 */
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background-color: #f4f6f9;
-            color: #333333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-        }
 
-        /* 案内看板をイメージした白いカード型の枠 */
+```
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R58TKKD5MZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R58TKKD5MZ');
+</script>
+
+<title>月極駐車場のご案内</title>
+
+<style>
+    body {
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+                     "Hiragino Sans", Meiryo, sans-serif;
+        background-color: #f4f6f9;
+        color: #333333;
+        line-height: 1.6;
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+    }
+
+    .parking-card {
+        background-color: #ffffff;
+        max-width: 500px;
+        width: 100%;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        text-align: center;
+        border-top: 6px solid #0052cc;
+        box-sizing: border-box;
+    }
+
+    .parking-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        background-color: #0052cc;
+        color: #ffffff;
+        font-size: 42px;
+        font-weight: bold;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #111111;
+        margin: 0 0 10px 0;
+        letter-spacing: 0.05em;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        color: #444444;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    .highlight {
+        color: #0052cc;
+        font-weight: bold;
+        background: linear-gradient(transparent 70%, #e6f0ff 70%);
+        padding: 0 4px;
+    }
+
+    .status-badge {
+        display: inline-block;
+        background: #e6f0ff;
+        color: #0052cc;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 6px 12px;
+        border-radius: 20px;
+        margin-bottom: 24px;
+    }
+
+    .price-box {
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 24px 20px;
+        margin-bottom: 24px;
+    }
+
+    .price-label {
+        font-size: 13px;
+        color: #64748b;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+
+    .price-value {
+        font-size: 36px;
+        color: #0052cc;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+
+    .price-unit {
+        font-size: 16px;
+        color: #333333;
+        font-weight: normal;
+    }
+
+    .price-note {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.7;
+    }
+
+    .consultation-text {
+        font-size: 13px;
+        color: #0052cc;
+        font-weight: 600;
+        margin-bottom: 18px;
+        line-height: 1.7;
+    }
+
+    .btn {
+        display: block;
+        background-color: #0052cc;
+        color: #ffffff;
+        padding: 16px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 1.5;
+        transition: background-color 0.2s;
+        box-shadow: 0 2px 8px rgba(0,82,204,0.2);
+    }
+
+    .btn:hover {
+        background-color: #003d99;
+    }
+
+    .btn-sub-text {
+        display: block;
+        font-size: 12px;
+        font-weight: normal;
+        opacity: 0.9;
+        margin-top: 4px;
+    }
+
+    @media (max-width: 480px) {
         .parking-card {
-            background-color: #ffffff;
-            max-width: 500px;
-            width: 100%;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            border-top: 6px solid #0052cc; /* ビジネス感のある信頼のブルー */
-            box-sizing: border-box;
-        }
-
-        /* ひと目で駐車場とわかる「P」マークのアイコン */
-        .parking-icon {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 70px;
-            height: 70px;
-            background-color: #0052cc;
-            color: #ffffff;
-            font-size: 42px;
-            font-weight: bold;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            font-family: Arial, sans-serif;
-        }
-
-        /* メインの見出し */
-        h1 {
-            font-size: 24px;
-            color: #111111;
-            margin: 0 0 10px 0;
-            letter-spacing: 0.05em;
-        }
-
-        /* サブテキスト */
-        .subtitle {
-            font-size: 15px;
-            color: #444444;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-        
-        /* 強調したい箇所（No.1番）の装飾 */
-        .highlight {
-            color: #0052cc;
-            font-weight: bold;
-            background: linear-gradient(transparent 70%, #e6f0ff 70%);
-            padding: 0 4px;
-        }
-
-        /* 料金表示のエリア */
-        .price-box {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 35px;
-        }
-
-        .price-label {
-            font-size: 12px;
-            color: #64748b;
-            font-weight: bold;
-            margin-bottom: 10px;
-            line-height: 1.5;
+            padding: 30px 20px;
         }
 
         .price-value {
-            font-size: 32px;
-            color: #0052cc;
-            font-weight: bold;
-            letter-spacing: 0.02em;
+            font-size: 30px;
         }
 
-        .price-unit {
-            font-size: 16px;
-            color: #333333;
-            font-weight: normal;
+        h1 {
+            font-size: 22px;
         }
+    }
+</style>
+```
 
-        /* お問い合わせボタン（文字数に合わせて幅とクッションを最適化） */
-        .btn {
-            display: block;
-            background-color: #0052cc;
-            color: #ffffff;
-            padding: 16px 20px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 15px;
-            line-height: 1.5;
-            transition: background-color 0.2s;
-            box-shadow: 0 2px 8px rgba(0, 82, 204, 0.2);
-            word-break: break-all; /* 枠内での自動改行を最適化 */
-        }
-        .btn:hover {
-            background-color: #003d99;
-        }
-        .btn-sub-text {
-            display: block;
-            font-size: 12px;
-            font-weight: normal;
-            opacity: 0.85;
-            margin-top: 4px;
-        }
-    </style>
 </head>
+
 <body>
 
-    <!-- 案内カードのここから -->
-    <div class="parking-card">
-        
-        <!-- 駐車場を示すPマーク -->
-        <div class="parking-icon">P</div>
-        
-        <!-- ビジネス調のタイトル -->
-        <h1>月極駐車場のご案内</h1>
-        <p class="subtitle">ただいま <span class="highlight">No.1番区画</span> の<br>新規ご契約を受付中です。</p>
-        
-        <!-- センス良くまとめた料金表示 -->
-        <div class="price-box">
-            <div class="price-label">
-                現時点での月額駐車料金<br>
-                <span style="font-weight: normal; font-size: 11px; color: #94a3b8;">（※車種・契約時期・近隣状況により各種ご提案可能な場合があります。まずはお気軽にお問い合わせください）</span>
-            </div>
-            <div class="price-value">25,300<span class="price-unit"> 円（税込）/ 月</span></div>
-        </div>
-        
-        <!-- 電話をかけられるお問い合わせボタン（スマホ対応） -->
-        <a href="tel:0525313451" class="btn">
-            空き状況・契約条件のご相談はこちら
-            <span class="btn-sub-text">MINIMINI浄心店（052-531-3451）まで</span>
-        </a>
-        
+<div class="parking-card">
+
+```
+<div class="parking-icon">P</div>
+
+<h1>月極駐車場のご案内</h1>
+
+<p class="subtitle">
+    ただいま <span class="highlight">No.1区画</span> の<br>
+    新規ご契約を受付中です。
+</p>
+
+<div class="status-badge">
+    募集中
+</div>
+
+<div class="price-box">
+
+    <div class="price-label">
+        月額駐車料金
     </div>
-    <!-- 案内カードのここまで -->
+
+    <div class="price-value">
+        25,300<span class="price-unit"> 円（税込）／月</span>
+    </div>
+
+    <div class="price-note">
+        ※契約条件や空き状況により、ご案内内容が異なる場合があります。<br>
+        詳細はお気軽にお問い合わせください。
+    </div>
+
+</div>
+
+<div class="consultation-text">
+    ご契約手続き・利用開始時期についても<br>
+    ご相談いただけます。
+</div>
+
+<a href="tel:0525313451"
+   class="btn"
+   onclick="gtag('event','phone_click',{
+       'event_category':'contact',
+       'event_label':'minimini_joshin'
+   });">
+    空き状況・契約条件のご相談はこちら
+    <span class="btn-sub-text">
+        MINIMINI浄心店（052-531-3451）
+    </span>
+</a>
+```
+
+</div>
 
 </body>
 </html>
