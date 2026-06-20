@@ -1,1780 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="ja">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R58TKKD5MZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  gtag('config', 'G-R58TKKD5MZ');
+</script>
 
-<title>SUGI Luxury Real Estate Advisory</title>
-
+<title>月極駐車場のご案内</title>
 
 <style>
-
-
-*{
-box-sizing:border-box;
-}
-
-
-html{
-scroll-behavior:smooth;
-scroll-restoration:manual;
-}
-
-
-body{
-
-margin:0;
-
-background:#050505;
-
-color:white;
-
-font-family:
--apple-system,
-BlinkMacSystemFont,
-"Helvetica Neue",
-Arial;
-
-overflow-anchor:none;
-
-}
-
-
-
-
-/* =================
-Language Button
-================= */
-
-
-.language{
-
-position:fixed;
-
-right:25px;
-
-bottom:25px;
-
-z-index:9999;
-
-background:
-rgba(255,255,255,.15);
-
-backdrop-filter:blur(15px);
-
-padding:10px;
-
-border-radius:40px;
-
-}
-
-
-
-.language button{
-
-background:#d4af37;
-
-border:none;
-
-padding:10px 18px;
-
-border-radius:25px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-margin:2px;
-
-}
-
-
-
-
-
-/* =================
-Navigation
-================= */
-
-
-nav{
-
-position:absolute;
-
-top:35px;
-
-left:60px;
-
-right:60px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-z-index:50;
-
-}
-
-
-
-nav b{
-
-font-size:30px;
-
-letter-spacing:3px;
-
-}
-
-
-
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-margin-left:25px;
-
-font-size:15px;
-
-}
-
-
-
-
-
-
-
-/* =================
-Hero
-================= */
-
-
-.hero{
-
-height:100vh;
-
-min-height:700px;
-
-position:relative;
-
-display:flex;
-
-align-items:center;
-
-padding-left:10%;
-
-overflow:hidden;
-
-}
-
-
-
-.hero img.bg{
-
-position:absolute;
-
-inset:0;
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-z-index:-3;
-
-}
-
-
-
-.hero:after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-
-linear-gradient(
-90deg,
-rgba(0,0,0,.9),
-rgba(0,0,0,.25)
-);
-
-z-index:-2;
-
-}
-
-
-
-.hero-content{
-
-max-width:850px;
-
-}
-
-
-
-
-.profile{
-
-width:180px;
-
-height:180px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-border:5px solid #d4af37;
-
-box-shadow:
-
-0 0 50px rgba(212,175,55,.45);
-
-}
-
-
-
-h1{
-
-font-size:
-
-clamp(60px,10vw,140px);
-
-letter-spacing:-5px;
-
-margin:20px 0;
-
-}
-
-
-
-.gold{
-
-color:#d4af37;
-
-}
-
-
-
-.hero-title{
-
-font-size:42px;
-
-line-height:1.2;
-
-}
-
-
-
-.subtitle{
-
-font-size:26px;
-
-line-height:1.6;
-
-color:#ddd;
-
-}
-
-
-
-
-.btn{
-
-display:inline-block;
-
-margin-top:35px;
-
-padding:18px 45px;
-
-border-radius:50px;
-
-background:#d4af37;
-
-color:#000;
-
-font-weight:bold;
-
-text-decoration:none;
-
-}
-
-
-
-
-
-
-
-/* =================
-Sections
-================= */
-
-
-section{
-
-padding:120px 10%;
-
-}
-
-
-
-.section-title{
-
-font-size:80px;
-
-letter-spacing:-5px;
-
-margin-bottom:40px;
-
-}
-
-
-
-.card{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-background:#111;
-
-border-radius:40px;
-
-overflow:hidden;
-
-}
-
-
-
-.card img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
-
-
-
-.text{
-
-padding:60px;
-
-}
-
-
-
-.text h2{
-
-font-size:45px;
-
-}
-
-
-
-.text p{
-
-font-size:22px;
-
-line-height:1.8;
-
-color:#ccc;
-
-}
-
-
-
-
-
-/* =================
-Portfolio
-================= */
-
-
-.portfolio-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-}
-
-
-
-.portfolio-card{
-
-background:
-
-linear-gradient(
-145deg,
-#1b1b1b,
-#080808
-);
-
-border-radius:35px;
-
-padding:40px;
-
-border:
-
-1px solid rgba(212,175,55,.4);
-
-}
-
-
-
-.portfolio-card h3{
-
-color:#d4af37;
-
-font-size:36px;
-
-}
-
-
-
-.metric{
-
-color:#aaa;
-
-margin-top:20px;
-
-}
-
-
-
-.number{
-
-font-size:40px;
-
-font-weight:bold;
-
-}
-
-
-
-.yield{
-
-font-size:32px;
-
-color:#d4af37;
-
-font-weight:bold;
-
-}
-
-
-
-
-
-/* =================
-Global Map
-================= */
-
-
-.global{
-
-text-align:center;
-
-background:
-
-radial-gradient(circle,#222,#000);
-
-}
-
-
-
-.map{
-
-height:500px;
-
-position:relative;
-
-background-image:url(
-"https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
-);
-
-background-size:contain;
-
-background-repeat:no-repeat;
-
-background-position:center;
-
-}
-
-
-.point{
-
-position:absolute;
-
-color:#d4af37;
-
-font-weight:bold;
-
-animation:pulse 2s infinite;
-
-}
-
-
-
-.tokyo{
-
-top:38%;
-
-left:76%;
-
-}
-
-
-.singapore{
-
-top:55%;
-
-left:67%;
-
-}
-
-
-.dubai{
-
-top:48%;
-
-left:58%;
-
-}
-
-
-.london{
-
-top:33%;
-
-left:45%;
-
-}
-
-
-.newyork{
-
-top:42%;
-
-left:25%;
-
-}
-
-
-
-@keyframes pulse{
-
-0%{
-opacity:.4;
-transform:scale(1);
-}
-
-50%{
-opacity:1;
-transform:scale(1.4);
-}
-
-100%{
-opacity:.4;
-transform:scale(1);
-}
-
-}
-
-
-/* =================
-Expertise
-================= */
-
-
-.projects{
-
-display:flex;
-
-gap:30px;
-
-}
-
-
-
-.project{
-
-flex:1;
-
-background:#111;
-
-border-radius:30px;
-
-overflow:hidden;
-
-}
-
-
-
-.project img{
-
-width:100%;
-
-height:250px;
-
-object-fit:cover;
-
-}
-
-
-
-.project h3{
-
-padding:25px;
-
-font-size:28px;
-
-}
-
-
-
-
-
-
-
-/* =================
-Footer
-================= */
-
-
-footer{
-
-padding:60px 20px;
-
-background:#000;
-
-text-align:center;
-
-color:#888;
-
-}
-
-
-
-
-
-
-
-/* =================
-Mobile Optimization
-================= */
-
-
-@media(max-width:900px){
-
-
-nav{
-
-
-top:15px;
-
-left:15px;
-
-right:15px;
-
-flex-direction:column;
-
-align-items:flex-start;
-
-background:
-rgba(0,0,0,.55);
-
-backdrop-filter:blur(12px);
-
-padding:18px;
-
-border-radius:25px;
-
-}
-
-
-
-nav b{
-
-font-size:24px;
-
-margin-bottom:12px;
-
-}
-
-
-
-nav div{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:12px;
-
-}
-
-
-
-nav a{
-
-margin:0;
-
-font-size:13px;
-
-}
-
-
-
-
-
-.hero{
-
-height:auto;
-
-min-height:100vh;
-
-padding:
-
-150px 25px 70px;
-
-align-items:flex-start;
-
-}
-
-
-
-.profile{
-
-width:105px;
-
-height:105px;
-
-border-width:3px;
-
-}
-
-
-
-h1{
-
-font-size:55px;
-
-letter-spacing:-2px;
-
-}
-
-
-
-.hero-title{
-
-font-size:27px;
-
-}
-
-
-
-.subtitle{
-
-font-size:18px;
-
-}
-
-
-
-.btn{
-
-padding:14px 28px;
-
-font-size:14px;
-
-}
-
-
-
-section{
-
-padding:70px 25px;
-
-}
-
-
-
-.section-title{
-
-font-size:45px;
-
-letter-spacing:-2px;
-
-}
-
-
-
-.card{
-
-display:block;
-
-border-radius:25px;
-
-}
-
-
-
-.card img{
-
-height:240px;
-
-}
-
-
-
-.text{
-
-padding:30px;
-
-}
-
-
-
-.text h2{
-
-font-size:30px;
-
-}
-
-
-
-.text p{
-
-font-size:17px;
-
-}
-
-
-
-.portfolio-grid{
-
-display:block;
-
-}
-
-
-
-.portfolio-card{
-
-margin-bottom:25px;
-
-padding:25px;
-
-}
-
-
-
-.number{
-
-font-size:32px;
-
-}
-
-
-
-
-.map{
-
-height:330px;
-
-}
-
-
-
-.point{
-
-font-size:12px;
-
-}
-
-
-
-.projects{
-
-display:block;
-
-}
-
-
-
-.project{
-
-margin-bottom:25px;
-
-}
-
-
-
-.project img{
-
-height:220px;
-
-}
-
-
-
-.language{
-
-right:15px;
-
-bottom:15px;
-
-}
-
-
-
-.language button{
-
-padding:8px 14px;
-
-font-size:12px;
-
-}
-
-
-}
-
-
-
-
-
-
+    body {
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+                     "Hiragino Sans", Meiryo, sans-serif;
+        background-color: #f4f6f9;
+        color: #333333;
+        line-height: 1.6;
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+    }
+
+    .parking-card {
+        background-color: #ffffff;
+        max-width: 500px;
+        width: 100%;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        text-align: center;
+        border-top: 6px solid #0052cc;
+        box-sizing: border-box;
+    }
+
+    .parking-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        background-color: #0052cc;
+        color: #ffffff;
+        font-size: 42px;
+        font-weight: bold;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #111111;
+        margin: 0 0 10px 0;
+        letter-spacing: 0.05em;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        color: #444444;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    .highlight {
+        color: #0052cc;
+        font-weight: bold;
+        background: linear-gradient(transparent 70%, #e6f0ff 70%);
+        padding: 0 4px;
+    }
+
+    .status-badge {
+        display: inline-block;
+        background: #e6f0ff;
+        color: #0052cc;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 6px 12px;
+        border-radius: 20px;
+        margin-bottom: 24px;
+    }
+
+    .price-box {
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 24px 20px;
+        margin-bottom: 24px;
+    }
+
+    .price-label {
+        font-size: 13px;
+        color: #64748b;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+
+    .price-value {
+        font-size: 36px;
+        color: #0052cc;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+
+    .price-unit {
+        font-size: 16px;
+        color: #333333;
+        font-weight: normal;
+    }
+
+    .price-note {
+        margin-top: 14px;
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.7;
+    }
+
+    .consultation-text {
+        font-size: 13px;
+        color: #0052cc;
+        font-weight: 600;
+        margin-bottom: 18px;
+        line-height: 1.7;
+    }
+
+    .btn {
+        display: block;
+        background-color: #0052cc;
+        color: #ffffff;
+        padding: 16px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 1.5;
+        transition: background-color 0.2s;
+        box-shadow: 0 2px 8px rgba(0,82,204,0.2);
+    }
+
+    .btn:hover {
+        background-color: #003d99;
+    }
+
+    .mail-btn {
+        display: block;
+        margin-top: 12px;
+        background-color: #ffffff;
+        color: #0052cc;
+        padding: 16px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        border: 2px solid #0052cc;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 1.5;
+        transition: all 0.2s;
+        box-sizing: border-box;
+    }
+
+    .mail-btn:hover {
+        background-color: #f3f8ff;
+    }
+
+    .btn-sub-text {
+        display: block;
+        font-size: 12px;
+        font-weight: normal;
+        opacity: 0.9;
+        margin-top: 4px;
+    }
+
+    @media (max-width: 480px) {
+        .parking-card {
+            padding: 30px 20px;
+        }
+
+        .price-value {
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+    }
 </style>
-
 
 </head>
 
-
-
 <body>
 
+<div class="parking-card">
 
+<div class="parking-icon">P</div>
 
+<h1>月極駐車場のご案内</h1>
 
-
-
-<div class="language">
-
-
-<button onclick="changeLang('en')">
-EN
-</button>
-
-
-<button onclick="changeLang('jp')">
-JP
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-
-<nav>
-
-
-<b>SUGI</b>
-
-
-<div>
-
-
-<a href="#about">
-About
-</a>
-
-
-<a href="#portfolio">
-Portfolio
-</a>
-
-
-<a href="#global">
-Global
-</a>
-
-
-<a href="#expertise">
-Expertise
-</a>
-
-
-</div>
-
-
-</nav>
-
-
-
-
-
-
-
-<!-- HERO -->
-
-
-
-<div class="hero">
-
-
-
-<img class="bg"
-
-src="
-https://images.unsplash.com/photo-1600607687939-ce8a6c25118c
-">
-
-
-
-
-
-
-<div class="hero-content">
-
-
-
-
-
-<img class="profile"
-
-src="
-https://images.unsplash.com/photo-1500648767791-00dcc994a43e
-">
-
-
-
-
-
-
-<h1>
-
-<span class="gold">
-
-SUGI
-
-</span>
-
-</h1>
-
-
-
-
-
-<div class="hero-title" id="heroTitle">
-
-
-Global Luxury Real Estate Advisory
-
-
-</div>
-
-
-
-
-
-<div class="subtitle" id="heroSubtitle">
-
-
-Creating timeless value<br>
-through global property strategy
-
-
-</div>
-
-
-
-
-<a class="btn">
-
-Explore Portfolio
-
-</a>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-<!-- ABOUT -->
-
-
-
-<section id="about">
-
-
-
-<div class="section-title">
-
-About
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-
-
-<img src="
-https://images.unsplash.com/photo-1560518883-ce09059eeffa
-">
-
-
-
-
-
-<div class="text">
-
-
-
-<h2 id="aboutTitle">
-
-Real Estate Consultant
-
-</h2>
-
-
-
-
-
-<p id="aboutText">
-
-
-20+ years experience in
-property leasing,
-development and asset management.
-
-
+<p class="subtitle">
+    ただいま <span class="highlight">No.1区画</span> の<br>
+    新規ご契約を受付中です。
 </p>
 
+<div class="status-badge">
+    募集中
+</div>
 
+<div class="price-box">
 
+    <div class="price-label">
+        月額駐車料金
+    </div>
+
+    <div class="price-value">
+        24,200<span class="price-unit"> 円（税込）／月</span>
+    </div>
+
+    <div class="price-note">
+        ※契約条件や空き状況により、ご案内内容が異なる場合があります。<br>
+        詳細はお気軽にお問い合わせください。
+    </div>
 
 </div>
 
-
-
+<div class="consultation-text">
+    ご契約手続き・利用開始時期についても<br>
+    ご相談いただけます。
 </div>
 
+<a href="tel:0525313451"
+   class="btn"
+   onclick="gtag('event','phone_click',{
+       'event_category':'contact',
+       'event_label':'minimini_joshin'
+   });">
+    空き状況・契約条件のご相談はこちら
+    <span class="btn-sub-text">
+        ミニミニ浄心店（052-531-3451）
+    </span>
+</a>
 
-
-
-</section>
-
-
-
-
-
-
-
-<!-- PORTFOLIO -->
-
-
-
-<section id="portfolio">
-
-
-
-<div class="section-title">
-
-Portfolio
-
-</div>
-
-
-
-
-
-<div class="portfolio-grid">
-
-
-
-
-
-<div class="portfolio-card">
-
-
-<h3>
-
-Tokyo
-
-</h3>
-
-
-<div class="metric">
-
-Asset Value
+<a href="mailto:joushin@minimini.jp?subject=月極駐車場について"
+   class="mail-btn"
+   onclick="gtag('event','email_click',{
+       'event_category':'contact',
+       'event_label':'joshin_mail'
+   });">
+    メールによるご相談はこちら
+    <span class="btn-sub-text">
+        joushin@minimini.jp
+    </span>
+</a>
 
 </div>
-
-
-<div class="number">
-
-¥1.8B
-
-</div>
-
-
-<div class="yield">
-
-4.2%
-
-</div>
-
-
-<p>
-
-Luxury Residential
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="portfolio-card">
-
-
-<h3>
-
-Singapore
-
-</h3>
-
-
-<div class="metric">
-
-Asset Value
-
-</div>
-
-
-<div class="number">
-
-SGD 8M
-
-</div>
-
-
-<div class="yield">
-
-3.8%
-
-</div>
-
-
-<p>
-
-Premium Condominium
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="portfolio-card">
-
-
-<h3>
-
-Dubai
-
-</h3>
-
-
-<div class="metric">
-
-Asset Value
-
-</div>
-
-
-<div class="number">
-
-AED 35M
-
-</div>
-
-
-<div class="yield">
-
-6.0%
-
-</div>
-
-
-<p>
-
-High-End Property
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-<!-- GLOBAL MAP -->
-
-
-<section id="global" class="global">
-
-
-<h2 id="globalTitle">
-
-Global Presence
-
-</h2>
-
-
-
-
-<div class="map">
-
-
-<div class="point tokyo">
-
-Tokyo
-
-</div>
-
-
-<div class="point singapore">
-
-Singapore
-
-</div>
-
-
-<div class="point dubai">
-
-Dubai
-
-</div>
-
-
-<div class="point london">
-
-London
-
-</div>
-
-
-<div class="point newyork">
-
-New York
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-<!-- EXPERTISE -->
-
-
-<section id="expertise">
-
-
-
-<div class="section-title">
-
-Expertise
-
-</div>
-
-
-
-
-
-<div class="projects">
-
-
-
-
-
-<div class="project">
-
-
-
-<img src="
-https://images.unsplash.com/photo-1545324418-cc1a3fa10c00
-">
-
-
-
-<h3 id="p1">
-
-Luxury Residence
-
-</h3>
-
-
-</div>
-
-
-
-
-
-
-<div class="project">
-
-
-
-<img src="
-https://images.unsplash.com/photo-1497366811353-6870744d04b2
-">
-
-
-
-<h3 id="p2">
-
-Urban Development
-
-</h3>
-
-
-</div>
-
-
-
-
-
-
-<div class="project">
-
-
-
-<img src="
-https://images.unsplash.com/photo-1600607687920-4e2a09cf159d
-">
-
-
-
-<h3 id="p3">
-
-Private Estate
-
-</h3>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<footer id="footer">
-
-
-© 2026 SUGI Luxury Real Estate Advisory
-
-
-</footer>
-
-
-
-
-
-
-
-
-<script>
-
-
-/*
-開いた瞬間トップへ
-*/
-
-history.scrollRestoration="manual";
-
-
-window.onload=function(){
-
-window.scrollTo(0,0);
-
-};
-
-
-
-
-
-
-/*
-Language Switch
-*/
-
-
-function changeLang(lang){
-
-
-
-if(lang==="jp"){
-
-
-
-
-
-document.getElementById("heroTitle").innerHTML=
-
-"世界基準の<br>高級不動産コンサルティング";
-
-
-
-
-
-document.getElementById("heroSubtitle").innerHTML=
-
-"不動産資産価値を最大化する<br>グローバル投資戦略";
-
-
-
-
-
-
-document.getElementById("aboutTitle").innerHTML=
-
-"不動産コンサルタント";
-
-
-
-
-
-
-document.getElementById("aboutText").innerHTML=
-
-"20年以上の不動産経験を持つ<br>賃貸・開発・資産管理の専門家";
-
-
-
-
-
-
-document.getElementById("globalTitle").innerHTML=
-
-"世界展開";
-
-
-
-
-
-
-
-document.getElementById("p1").innerHTML=
-
-"高級住宅";
-
-
-
-document.getElementById("p2").innerHTML=
-
-"都市開発";
-
-
-
-document.getElementById("p3").innerHTML=
-
-"邸宅資産";
-
-
-
-
-
-
-document.getElementById("footer").innerHTML=
-
-"© 2026 SUGI 高級不動産コンサルティング";
-
-
-
-
-}
-
-
-
-
-
-else{
-
-
-
-
-
-
-document.getElementById("heroTitle").innerHTML=
-
-"Global Luxury Real Estate Advisory";
-
-
-
-
-
-
-document.getElementById("heroSubtitle").innerHTML=
-
-"Creating timeless value<br>through global property strategy";
-
-
-
-
-
-
-document.getElementById("aboutTitle").innerHTML=
-
-"Real Estate Consultant";
-
-
-
-
-
-
-document.getElementById("aboutText").innerHTML=
-
-"20+ years experience in<br>property leasing, development and asset management.";
-
-
-
-
-
-
-document.getElementById("globalTitle").innerHTML=
-
-"Global Presence";
-
-
-
-
-
-
-
-document.getElementById("p1").innerHTML=
-
-"Luxury Residence";
-
-
-
-document.getElementById("p2").innerHTML=
-
-"Urban Development";
-
-
-
-document.getElementById("p3").innerHTML=
-
-"Private Estate";
-
-
-
-
-
-
-document.getElementById("footer").innerHTML=
-
-"© 2026 SUGI Luxury Real Estate Advisory";
-
-
-
-
-}
-
-
-
-
-}
-
-
-
-
-
-</script>
-
-
-
-
-
-
 
 </body>
-
-
 </html>
-
